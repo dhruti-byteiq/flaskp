@@ -11,7 +11,7 @@ app.post("/submit", async (req, res) => {
     const formData = req.body;
 
     // Send data to Flask backend
-    const response = await fetch("http://backend:5000/process", {
+    const response = await fetch("https://fl-405b63ca1c5a4f7ca680311f156325da.ecs.ap-south-1.on.aws/process", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData)
@@ -21,4 +21,4 @@ app.post("/submit", async (req, res) => {
     res.send(data);
 });
 
-app.listen(3000, () => console.log("Frontend running on port 3000"));
+app.listen(80, () => console.log("Frontend running on port 3000"));
